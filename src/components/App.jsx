@@ -14,11 +14,11 @@ const App = () => {
   const [entries, setEntries] = useState([])
 
   useEffect(() =>{
-    fetch('http://127.0.0.1:4001/categories')
+    fetch('https://journal-api-5sz3.onrender.com/categories')
       .then(res => res.json())
       .then(data => setCategories(data))
 
-    fetch('http://127.0.0.1:4001/entries')
+    fetch('https://journal-api-5sz3.onrender.com/entries')
       .then(res => res.json())
       .then(data => setEntries(data))
   }, [])
@@ -33,7 +33,7 @@ const App = () => {
               content: content
           }
           // POST new entry to API
-          const res = await fetch('http://127.0.0.1:4001/entries', {
+          const res = await fetch('https://journal-api-5sz3.onrender.com/entries', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
